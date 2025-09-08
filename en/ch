@@ -1,37 +1,40 @@
 ---
-icon: building-circle-arrow-right
+icon: flask-round-potion
 ---
 
-# Organization and Member Settings
+# Usage calculation
 
-Navigate to the \* \*<mark style="color:blue;"> Organization Conversations \* \*</mark> section on the left-hand side and you will see the default Organization information, including \* \* “Number of AI Assistants, Number of Conversation Texts This Month, Number of Conversations This Month, Knowledge Base Capacity Used \* \*” under this Organization.
+This page explains how to calculate the \* \* conversational text count \* \* and the \* \* knowledge base capacity \* \* when the system is in use. Understanding how usage is calculated can help you plan the use of resources and design AI assistants more effectively.
 
-<figure><img src="../.gitbook/assets/截圖 2025-04-25 中午12.31.36.png" alt=""><figcaption></figcaption></figure>
+## Conversation text count
 
-## 1. Create a new organization
+### How General Text is Calculated
 
-You can<mark style="color:blue;"> create more organizations by clicking \* \* Create Organization \* \*</mark> from the drop-down menu on your account in the top right corner.
+- For each round of conversation, \* \* user input \* \* and \* \* AI assistant responses \* \* are counted.
+- One character counts as one word
 
-<figure><img src="../.gitbook/assets/截圖 2025-04-24 下午4.51.00.png" alt=""><figcaption></figcaption></figure>
+Example: In the conversation history, the user input will be counted as 6 words, and the user input will be counted as 2 words, so the total is 8 words
 
-Enter the organization name and press the<mark style="color:blue;"> \* \* Confirm \* \*</mark> button.
+```
+使用者：Hello!
+AI助理：您好
+```
 
-<figure><img src="../.gitbook/assets/image (19).png" alt="" width="375"><figcaption></figcaption></figure>
+### How the image is calculated
 
-## 2. Switch Organization
+- - 500 \* \* words per image
 
-When you have more than one organization, you can<mark style="color:blue;"> switch to a different one by clicking the drop-down arrow for your account in the top right corner and clicking \* \*</mark> Switch Organization \* \*.
+## Knowledge Base Capacity Calculation
 
-<figure><img src="../.gitbook/assets/截圖 2025-04-24 下午4.50.17.png" alt=""><figcaption></figcaption></figure>
+The sum of the \* \* file sizes \* \* in the knowledge base upload page of all AI assistants under the organization is the capacity used by the knowledge base.
 
-## 3. Edit organization members
+## Usage Statistics Page
 
-Under this organization, you can add Eamil, who is already<mark style="color:blue;"> a MaiAgent user, to the organization by clicking on \* \* Edit Member</mark> \* \*.
+See current usage in \* \* Organization Settings \* \*
 
-<figure><img src="../.gitbook/assets/截圖 2025-04-25 中午12.32.15.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/截圖 2025-03-27 上午8.05.41.png" alt=""><figcaption></figcaption></figure>
 
-Tap <mark style="color:blue;">\* \* Add Member \* \*</mark> to add the user's email to the organization. The member can also be<mark style="color:blue;"> deleted via the \* \* Delete \* \*</mark> button.
+## よくある質問
 
-<figure><img src="../.gitbook/assets/截圖 2025-04-25 中午12.32.48.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/截圖 2025-04-25 中午12.33.16.png" alt=""><figcaption></figcaption></figure>
+- If the file is deleted, is the capacity calculated?
+  - will not be calculated after deletion
