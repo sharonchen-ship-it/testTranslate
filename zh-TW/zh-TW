@@ -1,31 +1,45 @@
 ---
-icon: layer-group
+icon: user-tag
 ---
 
-# Choose a cascading platform
+# Role Permissions Management
 
-MaiAgent 的 AI 助理可依實際需求進行不同類型的對話平台串接，無論是對外服務或對內支援同仁，皆可靈活應用。以下為各種串接方式的定義與用途說明：
+## Edit Role Permissions
 
-## <mark style="color:blue;">對外公開上線</mark>
+Under that organization, you can set<mark style="color:blue;"> permissions for people who are already members of that group by clicking \* \* Edit Role</mark> Permissions \* \*.
 
-適用於對外服務，讓 AI 助理成為企業對外溝通的第一線窗口：
+<figure><img src=".gitbook/assets/截圖 2025-04-25 中午12.34.17.png" alt=""><figcaption></figcaption></figure>
 
-### **串接對話平台：網站**
+Role permissions include:
 
-- 將 AI 助理嵌入企業官網，即可即時回應訪客提問，提供產品資訊、服務說明、常見問題解答等。
+QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS
 
-### **串接對話平台：LINE**
+<figure><img src=".gitbook/assets/截圖 2025-07-29 中午12.57.43.png" alt=""><figcaption></figcaption></figure>
 
-- 整合至企業 LINE 官方帳號，透過大眾熟悉的 LINE 通訊介面提供客服、用戶互動等功能。
+### 1. Add roles and assign permissions
 
-### **串接對話平台：FB Messenger**
+Click \* \*<mark style="color:blue;"> Add Role \* \*</mark> in the top right corner to enter a name for the new role and check the permissions the role can have.
 
-- 串接至 Facebook 粉絲專頁的 Messenger，方便透過社群平台即時回覆顧客問題。
+<figure><img src=".gitbook/assets/截圖 2025-04-25 中午12.35.29.png" alt=""><figcaption></figcaption></figure>
 
-## <mark style="color:blue;">僅對內使用</mark>
+### 2. Edit name and permissions
 
-適用於企業內部知識查詢與流程支援，提升團隊效率。
+Go to the edit page, edit the name of the role, and check the permissions that the role can have.
 
-### 內部問答
+<figure><img src=".gitbook/assets/截圖 2025-07-29 中午12.58.39.png" alt=""><figcaption></figcaption></figure>
 
-- AI 助理僅供內部人員使用，可串接內部文件或政策資料庫，支援員工快速查詢公司制度、流程說明、人資規範等，成為企業智慧型知識中樞。
+### 3. Assign Members
+
+From the edit page, the second tab,<mark style="color:blue;"> \* \* Assign Members \* \*</mark>, adds and deletes members you want to assign to that role.
+
+<figure><img src=".gitbook/assets/截圖 2025-04-25 中午12.36.38.png" alt=""><figcaption></figcaption></figure>
+
+### 4. Assign AI Assistant
+
+<figure><img src=".gitbook/assets/截圖 2025-07-29 中午12.59.08 (2).png" alt=""><figcaption><p>Click the button</p></figcaption></figure>
+
+<figure><img src=".gitbook/assets/截圖 2025-07-29 中午12.59.19.png" alt=""><figcaption><p>Check AI assistant to add or remove</p></figcaption></figure>
+
+### 5. Delete Role
+
+<figure><img src=".gitbook/assets/截圖 2025-04-25 中午12.38.23.png" alt=""><figcaption></figcaption></figure>
