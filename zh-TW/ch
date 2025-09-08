@@ -1,89 +1,57 @@
-# Table of Contents
+---
+icon: Telegram
+---
 
-- [General](README.md)
+# Chat Chat Platform: Telegram
 
-## Signing up and logging in <a href="#start" id="start"></a>
+## <mark style="color:blue;">Confirm before connecting:</mark>
 
-- [Apply for an account](start/apply.md)
-- [How to log in to the platform](start/login.md)
-- [Forgot Password](start/wang-ji-mi-ma.md)
+Registered to Telegram
 
-## Create your own AI assistant <a href="#build" id="build"></a>
+## <mark style="color:blue;">Start cascading</mark>
 
-- [Functions of the AI assistant](build/explain.md)
-- [Create an AI assistant](build/setup.md)
+### 1. Go to the left menu "Chat Platform" and tap the "<mark style="color:blue;">+ Chat Chat Platform"</mark> button in the top right corner
 
-## Create tools for your AI assistant <a href="#tools" id="tools"></a>
+<figure><img src=".gitbook/assets/截圖 2025-05-06 下午2.29.25.png" alt=""><figcaption></figcaption></figure>
 
-- [Functional description of the tool](tools/tool_description.md)
-- [Create Tool](tools/setup.md)
-- [Configure the tool for the AI assistant](tools/configure_tools.md)
+### 2. Chat with Telegram
 
-## Provide AI assistant reference information <a href="#reference" id="reference"></a>
+<figure><img src=".gitbook/assets/截圖 2025-05-06 下午2.32.08.png" alt=""><figcaption></figcaption></figure>
 
-- [How to create a knowledge base](reference/km.md)
-- [How to create FAQs](reference/faq.md)
-- [How to use the crawler (crawl data) feature](reference/ru-he-shi-yong-pa-chong-pa-qu-zi-liao-gong-neng.md)
+### 3. Fill in the name of the chat platform, select AI assistant
 
-## Launching the AI assistant <a href="#release" id="release"></a>
+<figure><img src=".gitbook/assets/截圖 2025-05-06 下午2.35.01.png" alt=""><figcaption></figcaption></figure>
 
-- [Choose a cascading platform](release/xuan-ze-chuan-jie-ping-tai.md)
-- [Internal Q&A features](release/explain.md)
-- [Chat Chat Platform: Website](release/website.md)
-- [Chat Chat Platform: line](release/line.md)
-- [Chat Chat Platform: FB Messenger](release/fb.md)
+### ### 4. Get Bot Tokens from BotFather [https://t.me/BotFather] (https://t.me/BotFather)
 
-***
+#### <mark style="color:blue;">Tap the BotFather</mark> link
 
-- [Chat Chat Platform: Telegram](chuan-jie-dui-hua-ping-tai-telegram.md)
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-## Track AI assistant performance <a href="#track" id="track"></a>
+#### Enter the Telegram BotFather channel
 
-- [Features for all conversations](track/reply.md)
-- [Reply to QA](track/quality.md)
-- [Webhook](track/webhook.md)
-- [usage analysis](track/usage.md)
+<figure><img src=".gitbook/assets/截圖 2025-05-06 下午2.35.57.png" alt=""><figcaption></figcaption></figure>
 
-## Organization settings <a href="#org" id="org"></a>
+#### Tap "<mark style="color:blue;">/start</mark>", tap "<mark style="color:blue;">/newbot</mark>" and follow the instructions to enter the bot name and username to get the bot token
 
-- [Organization management framework description](org/explain.md)
-- [Organization and Member Settings](org/groupsetup.md)
+<figure><img src=".gitbook/assets/截圖 2025-05-06 下午2.40.13.png" alt=""><figcaption></figcaption></figure>
 
-***
+<figure><img src=".gitbook/assets/截圖 2025-05-06 下午3.22.23.png" alt=""><figcaption></figcaption></figure>
 
-- [Role Permissions Management](rolepermission.md)
+### 5. Paste the Bot Token you just obtained into the MaiAgent chat editor interface
 
-## 應用實例 <a href="#application" id="application"></a>
+Paste the Bot Token and tap the <mark style="color:blue;">Save</mark> button in the bottom right corner to complete the cascading setup
 
-- [MaiAgent 架構介紹](application/system_structure.md)
+<figure><img src=".gitbook/assets/截圖 2025-05-06 下午3.41.08.png" alt=""><figcaption></figcaption></figure>
 
-- [Text Agent](application/text/README.md)
-  - [Regulatory Enquiry Assistant](application/text/lawsearch.md)
-  - [Product Inquiry Assistant](application/text/productsearch.md)
+<figure><img src=".gitbook/assets/截圖 2025-05-06 下午2.49.41.png" alt=""><figcaption></figcaption></figure>
 
-- [Internal Knowledge Management](application/km/README.md)
-  - [Expertise management](application/km/internalkm.md)
-  - [Meeting Requirements Management](application/km/meeting.md)
-  - [Financial Analyst Assistant](application/km/finance.md)
-  - [Credit Analysis Assistant](application/km/credit.md)
+### 6. - - Check if the connection was successful \* \*
 
-***
+You can start a conversation with the Telegram bot you just set up
 
-- [Voice Support](voicecs/README.md)
-  - [IVR Support Intent Recognition](voicecs/ivr-ke-fu-yi-tu-bian-shi.md)
-  - [Voice Call Summary](voicecs/yu-yin-tong-hua-zhai-yao.md)
-  - [Voice call quality inspection](voicecs/yu-yin-tong-hua-zhi-jian.md)
-- [Image Vision](ying-xiang-shi-jue/README.md)
-  - [Invoice Identification](ying-xiang-shi-jue/fa-piao-bian-shi.md)
-  - [Document scanning](ying-xiang-shi-jue/gong-wen-sao-miao.md)
-  - [Business card scanning](ying-xiang-shi-jue/ming-pian-sao-miao.md)
-- [External data concatenation](integrate/README.md)
-  - [Agricultural Data Query](integrate/farmingsearch.md)
+<figure><img src=".gitbook/assets/截圖 2025-05-06 下午2.55.48.png" alt=""><figcaption></figcaption></figure>
 
-## MaiAgent AI Assistant <a href="#livechat" id="livechat"></a>
+If the conversation is visible in all of MaiAgent's conversations, it's connected!
 
-- [Scan QR Code Live Interaction](livechat/sao-qr-code-ji-shi-hu-dong.md)
-
-## Other <a href="#others" id="others"></a>
-
-- [Usage calculation](others/usage.md)
+<figure><img src=".gitbook/assets/截圖 2025-05-06 下午2.56.30.png" alt=""><figcaption></figcaption></figure>
