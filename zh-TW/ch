@@ -1,228 +1,85 @@
 ---
-icon: gear-complex
+icon: screwdriver-wrench
 ---
 
-# Create Tool
+# Functional description of the tool
 
-本指南將引導您完成在平台中建立新工具的步驟。工具是擴展 AI 助理能力的關鍵，允許它與外部服務互動或執行特定任務。
+## 什麼是工具？
 
-{% hint style="info" %}
-[工具製作 AI 助理](https://chat.maiagent.ai/web-chats/27934296-105a-4f3f-80f0-7e9dcdb638d3)
-{% endhint %}
+「工具」是一種核心機制，它賦予 AI 助理與外部世界（如資料庫、API 或其他服務）互動並執行具體動作的能力。
 
-## 1. 進入工具管理介面
+透過讓用戶定義一組可供 AI 助理使用的「工具」，AI 助理能夠：
 
-首先，請從左側導航欄進入「 <mark style="color:blue;">AI 功能</mark>」區塊，然後點擊「<mark style="color:blue;">🔧 工具</mark>」。進入工具列表頁面後，點選右上角的「<mark style="color:blue;">➕ 新增工具</mark>」按鈕。
+1. 理解使用者的複雜請求。
+2. 自動地判斷何時需要使用特定的工具。
+3. 自動生成呼叫該工具所需的參數。
 
-<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午6.04.03.png" alt="工具列表頁面與新增按鈕"><figcaption><p>點擊「➕ 新增工具」開始建立</p></figcaption></figure>
+這使得 AI 助理不再僅限於生成文本回覆，更能實際執行多樣化的任務，例如：
 
-## 2. 設定顯示名稱
+- **查詢即時資訊：** 從資料庫或 API 獲取最新股價、天氣預報、航班狀態等。
+- **執行外部操作：** 呼叫訂票系統 API、控制智慧家居設備、發送電子郵件或訊息。
+- **處理檔案：** 讀取、寫入或分析本地或雲端文件。
+- **與其他軟體整合：** 操作 CRM 系統、專案管理工具或其他企業應用程式。
 
-在「新增工具」表單中，第一個需要填寫的是「<mark style="color:blue;">顯示名稱</mark>」。
+<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午5.28.29.png" alt=""><figcaption></figcaption></figure>
 
-- **用途**：此名稱將會顯示在平台介面中，供所有用戶查看。
-- **建議**：選擇一個能清晰表達工具主要功能的名稱，方便用戶理解。此名稱沒有嚴格的格式限制。
+## 工具的運作流程
 
-<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午6.09.29.png" alt="填寫顯示名稱"><figcaption><p>為您的工具設定一個易於理解的顯示名稱</p></figcaption></figure>
+一個基本的工具呼叫流程包含以下步驟：
 
-## 3. 設定工具名稱
+1. **定義工具：**
+   - 用戶需先定義好工具的相關參數。
+   - 爲 AI 助理設定可以使用的工具項目。
+   - 每個工具必須包含：
+     - 清晰的**名稱** (Name)。
+     - 易於理解的**描述** (Description)，說明工具的用途。
+     - 詳細的**參數說明** (Parameters)，包含每個參數的名稱、資料類型、是否為必填項等。
+2. **使用者提問：**
+   - 使用者以自然語言向 AI 助理提出請求。
+   - _範例：_ 「幫我查一下明天台北的天氣。」
+3. **模型思考與選擇工具：**
+   - AI 助理內部的 LLM 分析使用者請求的意圖。
+   - 模型從可用的工具列表中，判斷是否需要以及需要使用哪個工具來回應請求。
+   - _範例：_ 模型判斷需要天氣資訊，選擇了名為 `get_weather` 的工具。
+4. **生成工具呼叫參數：**
 
-接下來是「<mark style="color:blue;">工具名稱</mark>」欄位。
-
-- **用途**：此名稱是 AI 助理在內部呼叫和識別此工具時使用的唯一標識符。
-- **命名規則 (重要)**：
-  - 必須使用英文。
-  - 只能包含：
-    - 小寫英文字母 (a-z)
-    - 大寫英文字母 (A-Z)
-    - 數字 (0-9)
-    - 底線 (`_`)
-    - 連字符 (`-`)
-  - **範例**：`get_weather_forecast`, `database-query-tool`
-
-<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午6.18.55.png" alt="填寫工具名稱"><figcaption><p>設定符合命名規則的工具名稱</p></figcaption></figure>
-
-## 4. 選擇工具類型
-
-選擇「<mark style="color:blue;">工具類型</mark>」。根據您的服務所使用的協定類型選擇工具類型。
-
-<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午6.19.46.png" alt="工具類型選擇介面截圖"><figcaption></figcaption></figure>
-
-目前支援以下主要類型：
-
-### a. 🌐 API 工具
-
-- **最常用類型**。用於連接和呼叫外部的 HTTP/HTTPS API 服務。
-- **常見應用**：獲取天氣資訊、查詢外部資料庫、觸發 webhook、與第三方服務整合等。
-- **必要配置**：API 端點 URL、HTTP 方法、請求標頭 (Headers)、參數結構 (Parameters Schema)。
-
-### b. ☁️ MCP 工具
-
-- **模型上下文協定**（Model Context Protocol, MCP）,透過標準化協定實現伺服器、用戶端與主機的協作。
-- **適用場景**：讓 AI 助理調用外部工具執行更複雜和實用的任務。
-- **必要配置**：MCP 伺服器 URL、參數、環境變數等。
-
-## 5. 撰寫工具描述
-
-在「<mark style="color:blue;">工具描述</mark>」欄位中，用戶可以提供清晰且詳細的工具說明。
-
-- **重要性**：良好的描述能幫助 AI 助理更準確地理解：
-  - 工具的功能和目的。
-  - 何時應該使用這個工具。
-  - 如何解釋工具的輸出結果。
-- **建議內容**：說明工具做什麼、輸入什麼、輸出什麼，以及任何使用上的注意事項。
-
-<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午6.25.44.png" alt="工具描述欄位截圖"><figcaption><p>撰寫清晰、詳細的工具描述</p></figcaption></figure>
-
-## 6. API 配置詳細設定
-
-若您選擇了「<mark style="color:blue;">🌐 API 工具</mark>」，請完成以下設定：
-
-### a. 🔗 API URL
-
-- 填寫目標 API 端點的完整網址 (包含 `http://` 或 `https://`)。
-- **範例**：`https://api.openweathermap.org/data/2.5/weather`
-
-<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午6.28.12.png" alt=""><figcaption></figcaption></figure>
-
-### b. 📮 HTTP 方法
-
-- 從下拉選單選擇 API 服務要求的 HTTP 動詞：
-  - `GET`：通常用於獲取資源。
-  - `POST`：通常用於創建新資源或提交數據。
-  - `PUT`：通常用於完整替換或更新資源。
-  - `DELETE`：通常用於刪除資源。
-
-<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午6.29.09.png" alt=""><figcaption></figcaption></figure>
-
-### c. 📰 標頭 (Headers)
-
-- 點擊「<mark style="color:blue;">➕ 新增標頭</mark>」來定義隨請求發送的 HTTP 標頭。
-- **格式**：必須是有效的 JSON 物件，其中鍵 (Key) 是標頭名稱，值 (Value) 是標頭內容 (字串)。
-- **常見用途**：
-  - 身份驗證 (`Authorization`, `X-API-Key`)
-  - 指定內容類型 (`Content-Type`)
-  - 指定接受的回應格式 (`Accept`)
-- **範例**：
+- 模型生成一個結構化的輸出 (通常是 JSON 格式)，包含要呼叫的工具名稱及其所需參數。
+  - _範例：_
 
 ````json
     {
-      "Content-Type": "application/json; charset=utf-8",
-      "Authorization": "Bearer {{SECRET_API_TOKEN}}",
-      "Accept": "application/vnd.github.v3+json"
+      "name": "get_weather",
+      "arguments": {
+        "city": "台北",
+        "date": "明天"
+      }
     }
     ```
+5. **應用程式執行工具：**
+   * AI 助理的後端應用程式接收並解析模型生成的 JSON 指令。
+   * 應用程式根據指令中的工具名稱和參數，實際執行相應的函數或呼叫外部 API。
+   * _範例：_ 後端程式呼叫天氣查詢 API，傳入「台北」和「明天」作為參數。
+6.  **將結果回傳給模型：**
 
-<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午6.32.15.png" alt="API 標頭設定截圖"><figcaption><p>設定必要的 HTTP 請求標頭</p></figcaption></figure>
-
-### d. 🧩 參數結構 (Parameters Schema)
-
-* **核心設定**：定義 AI 助理在呼叫此工具時，可以或必須提供哪些參數，以及這些參數的格式。
-* **格式**：使用標準的 **JSON Schema** 格式。
-* **關鍵元素**：
-  * `type: "object"`：表示參數是一個物件。
-  * `properties`: 定義每個參數的物件。
-    * **參數名稱** (例如 `"search"`)：對應的物件包含該參數的細節。
-      * `type`: 參數的資料類型 (`string`, `integer`, `number`, `boolean`, `array`, `object`)。
-      * `description`: 對 AI 助理的說明，解釋此參數的意義。
-      * `default` (可選): 參數的默認值。
-      * `enum` (可選): 如果參數值只能是特定幾個選項之一，在此列出。
-  * `required`: 一個包含所有**必填**參數名稱的陣列。
-*   **範例** (影音搜尋工具)：
+* 應用程式將執行工具後得到的結果 (通常也是 JSON 格式) 回傳給 AI 助理的模型。
+    * _範例：_
 
 ```json
     {
-        "type": "object",
-        "properties": {
-            "limit": {
-                "type": "integer",
-                "minimum": 1,
-                "description": "回傳結果數量上限"
-            },
-            "fields": {
-                "type": "string",
-                "description": "以逗號分隔的欄位清單"
-            },
-            "search": {
-                "type": "string",
-                "description": "搜尋關鍵字"
-            }
-        },
-        "required": ["search"]
+      "temperature": "25°C",
+      "condition": "晴天"
     }
     ```
+7. **模型生成最終回覆：**
+   * 模型接收工具執行的結果，並將其整合進最終的自然語言回覆中。
+   * _範例：_ 「明天台北的天氣預計是晴天，氣溫約為 25°C。」
 
-<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午6.42.41.png" alt="API 參數結構設定截圖"><figcaption><p>使用 JSON Schema 精確定義 API 參數</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午5.03.42.png" alt=""><figcaption></figcaption></figure>
 
-## 7. MCP 配置詳細設定
+## 工具的主要優勢
 
-若您在「4. 選擇工具類型」時選擇了「<mark style="color:blue;">☁️ MCP 工具</mark>」，則需要完成以下設定。MCP ( Model Context Protocol )  工具用於整合多雲平台服務或執行本地客戶端應用程式。
-
-### a. ⚙️ MCP 伺服器 URL
-
-* **用途**：MaiAgent 目前接受外部的 MCP 伺服器，透過提供 MCP 伺服器的服務位址(URL)， AI 助理就可以調用 MCP 服務連結外部應用。
-* **格式**：
-  * 請填寫完整的 URL (例如：`https://mcp.dev/maiagent/mcp_service`)。
-* **注意**：此欄位為必填。
-
-<figure><img src="../.gitbook/assets/截圖 2025-05-11 上午11.26.15.png" alt="MCP 客戶端 URL 或命令設定示意圖"><figcaption><p>設定 MCP 客戶端 URL 或命令</p></figcaption></figure>
-
-### b. 🎛️ MCP 命令參數 (mcp\_args)
-
-* **用途**：定義在執行 MCP 命令或呼叫 MCP 服務時需要傳遞的參數。
-* **格式**：建議使用 JSON 陣列 (Array) 的格式，其中每個元素都是一個字串代表一個參數。
-  *   **範例** (JSON 陣列)：
-
-```json
-      [
-        "--user",
-        "admin",
-        "--config",
-        "/path/to/config.yaml"
-      ]
-      ```
-  * 如果您輸入的是一個以逗號分隔的字串 (例如：`arg1,arg2,arg3`)，系統會嘗試將其解析為參數列表。為避免歧義，推薦使用 JSON 陣列。
-* **留空**：如果命令或服務不需要額外參數，此欄位可以留空。
-
-<figure><img src="../.gitbook/assets/截圖 2025-05-11 上午11.29.42.png" alt="MCP 命令參數設定示意圖"><figcaption><p>設定 MCP 命令參數</p></figcaption></figure>
-
-### c. 🌳 MCP 環境變數 (mcp\_env)
-
-* **用途**：為 MCP 命令的執行環境設定必要的環境變數。
-* **格式**：必須是有效的 JSON 物件，其中鍵 (Key) 是環境變數的名稱，值 (Value) 是環境變數的內容 (字串)。
-  *   **範例**：
-
-```json
-      {
-        "API_KEY": "{{SECRET_MCP_API_KEY}}",
-        "REGION": "us-west-1",
-        "DEBUG_MODE": "true"
-      }
-      ```
-* **留空**：如果不需要設定特定的環境變數，此欄位可以留空。
-
-<figure><img src="../.gitbook/assets/截圖 2025-05-11 上午11.28.39.png" alt="MCP 環境變數設定示意圖"><figcaption><p>設定 MCP 環境變數</p></figcaption></figure>
-
-### d. 🔑 MCP 允許的子工具 (mcp\_allowed\_tools)
-
-* **用途**：指定在此 MCP 客戶端下，AI 助理被授權可以使用的具體子工具列表。一個 MCP 客戶端可能提供多個不同的功能或子工具。
-* **格式**：JSON 陣列 (Array) 的格式，其中每個元素都是一個字串，代表一個允許使用的子工具名稱。
-  *   **範例**：
-
-```json
-      [
-        "get_system_load",
-        "run_backup_job",
-        "query_database_status"
-      ]
-      ```
-* **自動偵測/留空**：如果此欄位留空或未提供，系統在初次連接 MCP 客戶端時，會嘗試自動偵測所有可用的子工具，並預設允許所有偵測到的子工具。若您希望限制 AI 助理只能使用特定的子工具，請在此明確列出。
-
-<figure><img src="../.gitbook/assets/截圖 2025-05-11 上午11.32.11.png" alt="MCP 允許的子工具設定示意圖"><figcaption><p>設定 MCP 允許使用的子工具</p></figcaption></figure>
-
-## 8. 💾 儲存工具
-
-確認所有設定無誤後，捲動到頁面底部，點擊「<mark style="color:blue;">確認</mark>」按鈕。您的新工具就建立完成了！
-
-<figure><img src="../.gitbook/assets/截圖 2025-05-03 下午6.44.22.png" alt=""><figcaption></figcaption></figure>
+* **擴展 AI 助理能力：** 打破僅限於生成文本的限制，讓 AI 助理能夠存取即時資訊、執行現實世界的任務。
+* **提高可靠性與精確度：** 透過結構化的呼叫與回傳，確保任務指令清晰明確，降低模型「幻覺」或操作錯誤的風險。
+* **實現複雜的自動化流程：** 能夠設計出可自主完成多步驟、跨系統任務的 AI 助理，大幅提升效率 (例如：自動規劃旅遊行程並預訂機票酒店)。
+* **更自然的互動體驗：** 使用者只需用自然語言描述需求，AI 助理即可理解並轉化為精確的系統操作。
 ````
