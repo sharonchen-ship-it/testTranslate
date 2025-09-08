@@ -1,77 +1,37 @@
 ---
-description: Rights management solution based on RBAC design
-icon: screwdriver-wrench
+icon: building-circle-arrow-right
 ---
 
-# Organization management framework description
+# Organization and Member Settings
 
-### Feature Brief
+Navigate to the \* \*<mark style="color:blue;"> Organization Conversations \* \*</mark> section on the left-hand side and you will see the default Organization information, including \* \* “Number of AI Assistants, Number of Conversation Texts This Month, Number of Conversations This Month, Knowledge Base Capacity Used \* \*” under this Organization.
 
-The system is based on RBAC and provides a complete organizational management solution that enables organizations to effectively organize teams, assign permissions, and monitor resource usage. Hierarchical design makes it easy to create and manage multiple roles while ensuring proper permission control and resource allocation.
+<figure><img src="../.gitbook/assets/截圖 2025-04-25 中午12.31.36.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/截圖 2025-03-30 下午6.42.56.png" alt=""><figcaption></figcaption></figure>
+## 1. Create a new organization
 
-Roles are the core units that define permissions and resource allocation. Organizational owners can set specific functional permissions and resource quotas for each role according to the needs of different teams to achieve granular management.
+You can<mark style="color:blue;"> create more organizations by clicking \* \* Create Organization \* \*</mark> from the drop-down menu on your account in the top right corner.
 
-<table><thead><tr><th>Member Type</th><th width="215.55859375"> Description</th><th> Permission Scope</th></tr></thead><tbody><tr><td> Owner</td><td> Defaults to the creator of the organization</td><td> Has organization settings permissions in Admin<br>to assign organization settings permissions to others</td></tr><tr><td> Regular Members</td><td> Members in Roles</td><td> Permissions and resources for all roles, such as internal Q&A, conversation permissions, etc.</td></tr></tbody></table>
+<figure><img src="../.gitbook/assets/截圖 2025-04-24 下午4.51.00.png" alt=""><figcaption></figcaption></figure>
 
-### Hierarchy
+Enter the organization name and press the<mark style="color:blue;"> \* \* Confirm \* \*</mark> button.
 
-- - - Hierarchical \* \*: Organization → role → members
-- - - Flexible permissions \* \*: can be set individually according to role requirements
-- - - Centralized management \* \*: Organizational owners manage all settings in one place
-- - - Membership flexibility \* \*: Ability to participate in different projects or teams across roles
+<figure><img src="../.gitbook/assets/image (19).png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+## 2. Switch Organization
 
-### Create Organization
+When you have more than one organization, you can<mark style="color:blue;"> switch to a different one by clicking the drop-down arrow for your account in the top right corner and clicking \* \*</mark> Switch Organization \* \*.
 
-- Any account user can create a new organization
-- The organization creator automatically becomes the owner of the organization
-- Separate management space for each organization
+<figure><img src="../.gitbook/assets/截圖 2025-04-24 下午4.50.17.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/截圖 2025-03-30 下午5.55.17.png" alt=""><figcaption></figcaption></figure>
+## 3. Edit organization members
 
-### Organization Owner Role
+Under this organization, you can add Eamil, who is already<mark style="color:blue;"> a MaiAgent user, to the organization by clicking on \* \* Edit Member</mark> \* \*.
 
-#### Member Management
+<figure><img src="../.gitbook/assets/截圖 2025-04-25 中午12.32.15.png" alt=""><figcaption></figcaption></figure>
 
-- Add new members to the organization and assign them to roles via email
-- Removing a member from a role
+Tap <mark style="color:blue;">\* \* Add Member \* \*</mark> to add the user's email to the organization. The member can also be<mark style="color:blue;"> deleted via the \* \* Delete \* \*</mark> button.
 
-#### Managing Roles
+<figure><img src="../.gitbook/assets/截圖 2025-04-25 中午12.32.48.png" alt=""><figcaption></figcaption></figure>
 
-- People with Organization Settings permissions can manage role settings to give permissions to each role.
-- Once the role is created, members can be added to the role to inherit the permissions and resources to which the role belongs.
-
-#### 权限管理
-
-Set the following permissions for the role:
-
-- AI Assistant permissions
-- All Q&A permissions
-- Internal Q&A permissions
-- Chat Platform Permissions
-- Organization settings permissions
-
-#### Resource Allocation
-
-To assign available resources to a role:
-
-<figure><img src="../.gitbook/assets/截圖 2025-03-30 下午5.59.41.png" alt=""><figcaption></figcaption></figure>
-
-### Role Features
-
-- Roles are functional units within an organization, with freely configurable membership
-- Roles can be assigned to members from any member within the organization
-- One member can inherit multiple roles at the same time for flexible permission management
-- Each role has its own permission settings for different scenarios
-
-### Design Advantages
-
-Designs like this can:
-
-- Make the internal structure of the organization clearer
-- Easily manage permission requirements for different teams
-- Provides real-time visibility into your organization's operations
-- Ensure effective management of resource use
+<figure><img src="../.gitbook/assets/截圖 2025-04-25 中午12.33.16.png" alt=""><figcaption></figcaption></figure>
